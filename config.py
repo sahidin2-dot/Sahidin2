@@ -2,7 +2,6 @@
 
 import logging
 import os
-from setuptools.util import strtobool
 from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 
