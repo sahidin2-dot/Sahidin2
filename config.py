@@ -60,7 +60,7 @@ FORCE_MSG = os.environ.get(
 # Atur Teks Kustom Anda di sini, Simpan (None) untuk Menonaktifkan Teks Kustom
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
-LOG_FILE_NAME = "logs.txt"
+LOG_FILE_NAME = "/tmp/logs.txt"
 logging.basicConfig(
     level=logging.INFO,
     format="[%(levelname)s] - %(name)s - %(message)s",
