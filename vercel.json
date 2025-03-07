@@ -1,19 +1,13 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/telegram",
-      "dest": "index.js"
-    }
-  ],
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "@vercel/env/TELEGRAM_BOT_TOKEN"
-  }
+     "builds": [{
+         "src": "main.py",
+         "use": "@vercel/python",
+         "config": { "maxLambdaSize": "15mb" }
+     }],
+     "routes": [
+         {
+             "src": "/(.*)",
+             "dest": "main.py"
+         }
+     ]
 }
-
