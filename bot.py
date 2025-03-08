@@ -10,7 +10,7 @@ from pyrogram import Client
 from pyrogram.storage import FileStorage
 from pyrogram.enums import ParseMode
 from datetime import datetime
-
+from pathlib import Path
 
 from config import (
     API_HASH,
@@ -39,7 +39,7 @@ name ="""
 
 class Bot(Client):
     def __init__(self):
-        storage = FileStorage("./session", "/tmp/bot_session")
+        storage = FileStorage(Path("./session"), Path("/tmp/bot_session"))
         super().__init__(
             name="Bot",
             api_hash=API_HASH,
