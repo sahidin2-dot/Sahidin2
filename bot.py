@@ -7,8 +7,10 @@ import pyromod.listen
 from aiohttp import web
 from plugins import web_server
 from pyrogram import Client
+from pyrogram.storage import FileStorage
 from pyrogram.enums import ParseMode
 from datetime import datetime
+
 
 from config import (
     API_HASH,
@@ -37,6 +39,7 @@ name ="""
 
 class Bot(Client):
     def __init__(self):
+        storage = FileStorage("/tmp/bot_session")
         super().__init__(
             name="Bot",
             api_hash=API_HASH,
@@ -44,6 +47,7 @@ class Bot(Client):
             plugins={"root": "plugins"},
             workers=TG_BOT_WORKERS,
             bot_token=TG_BOT_TOKEN,
+            storage=storage
         )
         self.LOGGER = LOGGER
 
