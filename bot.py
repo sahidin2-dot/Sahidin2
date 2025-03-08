@@ -39,7 +39,7 @@ name ="""
 
 class Bot(Client):
     def __init__(self):
-        storage = FileStorage("/tmp/bot_session")
+        storage = FileStorage("./session", "/tmp/bot_session")
         super().__init__(
             name="Bot",
             api_hash=API_HASH,
